@@ -1,0 +1,23 @@
+Package: dietaryindexNDP
+Title: Improved DII Calculation with Additional Components for NHANES.
+Version: 1.0.0
+Authors@R: 
+    person("Zhe", "Xu", , "zxu@cmu.edu.cn", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: 
+    This R package was developed based on the DII_NHANES_FPED() from the R package 'dietaryindex'. The calculation of the DII incorporates garlic, ginger, onion, pepper, and oregano/thyme in addition to the components used in the DII_NHANES_FPED function for NHANES participants. Additionally, the intakes of flavan-3-ols, flavones, flavonols, flavonones, anthocyanidins, and isoflavones are included for participants from NHANES 2007-2010 and 2017-2018. 
+    The calculation of the DII consists of three steps
+    1. The first step is flattening the FNDDSSRLinks or FNDDSIngred file.
+    2. The second step involves calculating the intakes of garlic, ginger, onion, pepper, thyme and oregano, as well as isoflavones, anthocyanidins, flavan-3-ols, flavanones, flavones and flavonols for specific NHANES survey periods.
+    3. In the third step, the DII is calculated based on components such as alcohol, vitamins (B12, B6, A, C, D, E), β-carotene, caffeine, carbohydrates, cholesterol, energy, fiber, folic acid, iron, magnesium, monounsaturated fatty acids (MUFA), niacin, n-6 fatty acids, protein, polyunsaturated fatty acids (PUFA), riboflavin, saturated fat, selenium, thiamin, zinc, garlic, ginger, onion, pepper, thyme, and oregano. It is also advisable to include isoflavones, anthocyanidins, flavan-3-ols, flavanones, flavones, and flavonols for participants of NHANES 2007-2008, 2009-2010 or 2017-2018.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Depends: R (>= 3.5.0), DBI, haven, tidyverse
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+NeedsCompilation: no
+Packaged: 2024-10-23 14:41:07 UTC; Administrator
+Author: Zhe Xu [aut, cre] (YOUR-ORCID-ID)
+Maintainer: Zhe Xu <zxu@cmu.edu.cn>
