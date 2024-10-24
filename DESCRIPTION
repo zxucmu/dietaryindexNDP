@@ -3,7 +3,7 @@ Title: Improved DII Calculation with Additional Components for NHANES.
 Version: 1.0.0
 Authors@R: 
     person("Zhe", "Xu", , "zxu@cmu.edu.cn", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           comment = c(ORCID = "0009-0001-4165-0400"))
 Description: 
     This R package was developed based on the DII_NHANES_FPED() from the R package 'dietaryindex'. The calculation of the DII incorporates garlic, ginger, onion, pepper, and oregano/thyme in addition to the components used in the DII_NHANES_FPED function for NHANES participants. Additionally, the intakes of flavan-3-ols, flavones, flavonols, flavonones, anthocyanidins, and isoflavones are included for participants from NHANES 2007-2010 and 2017-2018. 
     The calculation of the DII consists of three steps
