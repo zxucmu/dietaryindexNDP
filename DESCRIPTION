@@ -19,5 +19,5 @@ Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
 Packaged: 2024-10-23 23:42:39 UTC; Administrator
-Author: Zhe Xu [aut, cre] (0009-0001-4165-0400)
+Author: Zhe Xu [aut, cre] (<https://orcid.org/0009-0001-4165-0400>)
 Maintainer: Zhe Xu <zxu@cmu.edu.cn>
