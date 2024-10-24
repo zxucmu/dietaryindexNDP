@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>DietaryindexNDP: User Guide</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">DietaryindexNDP: User Guide</h1>
+
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>The R package ‘dietaryindexNDP’ (dietaryindex NHANES DII PLUS)
+provides a comprehensive set of tools to calculate the Dietary
+Inflammation Index (DII) using data from the National Health and
+Nutrition Examination Survey (NHANES). This vignette will guide you
+through the functionality of the package, demonstrating how to utilize
+its various functions for dietary analysis and inflammation index
+calculation.</p>
+</div>
+<div id="citaions" class="section level1">
+<h1>Citaions</h1>
+<p>Please cite the following two publications when using this R package
+in your research:</p>
+<p>1. J.J. Zhan, R.A. Hodge, A.L. Dunlop, M.M. Lee, L. Bui, D. Liang,
+E.P. Ferranti, Dietaryindex: A User-Friendly and Versatile R Package for
+Standardizing Dietary Pattern Analysis in Epidemiological and Clinical
+Studies, The American Journal of Clinical Nutrition, <a href="https://doi.org/10.1016/j.ajcnut.2024.08.021" class="uri">https://doi.org/10.1016/j.ajcnut.2024.08.021</a>.</p>
+<p>2. Improving the dietaryindex R Package: A Proposal to Include
+Additional Components for More Accurate DII Computation in NHANES, The
+American Journal of Clinical Nutrition. (Under review)</p>
+</div>
+<div id="before-you-get-started" class="section level1">
+<h1><strong>Before You Get Started</strong></h1>
+<div id="installation" class="section level2">
+<h2><strong>1. Installation</strong></h2>
+<p>There are several methods to install the R package. Below are two
+options for installing this package:</p>
+<p><strong>1.1 Online Installation from GitHub:</strong> You can install
+the package directly from GitHub using the following command:</p>
+<pre><code>install.packages(&#39;devtools&#39;)
+
+devtools::install_github(&quot;zxucmu/dietaryindexNDP&quot;, ref = &quot;dietaryindexNDP_1.0.0&quot;)</code></pre>
+<p><strong>1.2 Offline Installation from a ZIP File</strong>:
+Alternatively, you can install the package offline by downloading the
+ZIP file from GitHub (<a href="https://github.com/zxucmu/dietaryindexNDP/tree/dietaryindexNDP_1.0.0" class="uri">https://github.com/zxucmu/dietaryindexNDP/tree/dietaryindexNDP_1.0.0</a>),
+without unzipping it, place it into the working directory, and use the
+following command:</p>
+<pre><code>install.packages(&#39;devtools&#39;)
+
+devtools::install_local(path = &#39;./dietaryindexNDP-dietaryindexNDP_1.0.0.zip&#39;)</code></pre>
+</div>
+<div id="loading" class="section level2">
+<h2><strong>2. Loading</strong></h2>
+<p>Please load this package before using it.</p>
+<pre><code>library(dietaryindexNDP)</code></pre>
+</div>
+</div>
+<div id="how-to-use-this-package" class="section level1">
+<h1>How to Use This Package</h1>
+<p>The calculation of the DII consists of three steps:</p>
+<p>1. The first step is flattening a FNDDSSRLinks or FNDDSIngred
+file.</p>
+<p>2. The second step involves calculating the intakes of garlic,
+ginger, onion, pepper, thyme and oregano, as well as isoflavones,
+anthocyanidins, flavan-3-ols, flavanones, flavones and flavonols for
+specific NHANES survey periods.</p>
+<p>3. In the third step, the DII is calculated based on components such
+as alcohol, vitamins (B12, B6, A, C, D, E), β-carotene, caffeine,
+carbohydrates, cholesterol, energy, fiber, folic acid, iron, magnesium,
+monounsaturated fatty acids (MUFA), niacin, n-6 fatty acids, protein,
+polyunsaturated fatty acids (PUFA), riboflavin, saturated fat, selenium,
+thiamin, zinc, garlic, ginger, onion, pepper, thyme, and oregano. It is
+also advisable to include isoflavones, anthocyanidins, flavan-3-ols,
+flavanones, flavones, and flavonols for participants of NHANES
+2007-2008, 2009-2010 or 2017-2018.</p>
+<div id="flattening-a-fnddssrlinks-or-fnddsingred-file" class="section level2">
+<h2><strong>1. Flattening a FNDDSSRLinks or FNDDSIngred
+File</strong></h2>
+<p>The purpose of flattening a FNDDSSRLinks or FNDDSIngred file for a
+specific version of the USDA Food and Nutrient Database for Dietary
+Studies (FNDDS) is to ensure that all FNDDS food codes are linked to
+their corresponding SR/Ingredient codes. To use this function, you need
+to specify the path to a FNDDS file or pass an already imported
+dataframe from the FNDDSSRLinks or FNDDSIngred tables.</p>
+<p>Here are two examples showing how to use this function:</p>
+<p><strong>Example 1:</strong> <strong>Provide a Path to a FNDDS
+File</strong></p>
+<p>In this example, a file path for a FNDDS file in Microsoft Access®
+format (.mdb) is provided. The file names should be formatted like:
+<strong><code>FNDDS.mdb</code></strong>,
+<strong><code>FNDDS_2017-2018.mdb</code></strong>, etc. To facilitate
+understanding, researchers can download the sample data file named
+<strong><code>FNDDS4.mdb</code></strong> from <a href="https://github.com/zxucmu/dietaryindexNDP/tree/Supplements/Example%20files%20for%20version%201.0.0" class="uri">here</a> and place it in your working directory.</p>
+<p>Thus, the function illustrated in this example is:</p>
+<pre><code>FNDDSSRLinks_flattened_0708 &lt;- FNDDSSRLinks_FNDDSIngred_flattened(FNDDS_PATH = &#39;./FNDDS4.mdb&#39;)</code></pre>
+<p>To obtain other FNDDS files, please refer to the following link: <a href="http://www.ars.usda.gov/ba/bhnrc/fsrg" class="uri">http://www.ars.usda.gov/ba/bhnrc/fsrg</a></p>
+<p><strong>Example 2: Flattening an Imported DataFrame</strong></p>
+<p>Alternatively, this function will flatten data that has already been
+imported as a dataframe.</p>
+<p>In this second example, suppose
+<strong><code>FNDDSIngred_1718</code></strong> is a dataframe that has
+already been imported into the Global Environment from the table named
+FNDDSIngred within the <strong><code>FNDDS_2017-2018.mdb</code></strong>
+file.</p>
+<pre><code># You can also access &#39;FNDDSIngred_1718&#39; from the preloaded dataset in the R package.
+
+FNDDSIngred_1718 &lt;- dietaryindexNDP::EXAMPLE(FILE = &#39;FNDDSIngred_1718&#39;)</code></pre>
+<p>Thus, the function illustrated in this example is:</p>
+<pre><code>FNDDSIngred_flattened_1718 &lt;- FNDDSSRLinks_FNDDSIngred_flattened(FNDDS_PATH = FNDDSIngred_1718)</code></pre>
+<p><strong>Value:</strong></p>
+<p>This function will generate a dataframe that flattens the
+FNDDSSRLinks/FNDDSIngred file for a specified FNDDS version.</p>
+</div>
+<div id="calculating-the-intakes-of-garlic-and-other-additional-components" class="section level2">
+<h2><strong>2. Calculating the Intakes of Garlic and Other Additional
+Components</strong></h2>
+<p><strong>2.1</strong> <strong>Calculating the Intake of Garlic,
+Ginger, Onion, Pepper, Thyme and Oregano Separately</strong></p>
+<p>The calculation for the intake of garlic, ginger, onion, pepper,
+thyme, and oregano are similar; therefore, we will provide a detailed
+explanation using garlic as an example.</p>
+<p>To calculate the garlic component within the DII, the function
+<strong><code>DII_GARLIC_INTAKE()</code></strong> requires three
+inputs:</p>
+<ul>
+<li><p><strong>FLATTENED_FILEPATH:</strong> A flattened FNDDSSRLinks or
+FNDDSIngred file, generated by the
+<strong><code>FNDDSSRLinks_FNDDSIngred_flattened()</code></strong> in
+step 1.</p></li>
+<li><p><strong>DR1IFF_PATH:</strong> The path or pre-imported dataframe
+for the Day 1 Individual Foods File (DR1IFF), which contains dietary
+intake data for NHANES participants.</p></li>
+<li><p><strong>DR2IFF_PATH:</strong> Optionally, the path or dataframe
+for the Day 2 Individual Foods File (DR2IFF), when available.</p></li>
+</ul>
+<p>The function <strong>DII_GARLIC_INTAKE()</strong> calculates the
+total garlic intake for each participant based on the recipes that are
+detailed in the supplementary file titled ‘<em>Recipes used to calculate
+the intakes of garlic, ginger, onion, pepper, thyme, and
+oregano.xlsx</em>’ (<a href="https://github.com/zxucmu/dietaryindexNDP/blob/41f72620337c693037f7244ec5b88821d953df9e/Recipes%20used%20to%20calculate%20the%20intakes%20of%20garlic%20ginger%20onion%20pepper%20thyme%20and%20oregano.xlsx" class="uri">download here</a>).</p>
+<p>Here are some examples showing how to use this function:</p>
+<p><strong>Example 1:</strong> <strong>Provide a Path to a DR1IFF or
+DR2IFF File</strong></p>
+<p>In this example, a file path for a
+<strong><code>DR1IFF_E.XPT</code></strong> or
+<strong><code>DR2IFF_E.XPT</code></strong> file is provided. To
+facilitate understanding, researchers can download the sample data file
+named <strong><code>FNDDS4.mdb</code>,
+<code>DR1IFF_E.XPT</code></strong> and
+<strong><code>DR2IFF_E.XPT</code></strong> from <a href="https://github.com/zxucmu/dietaryindexNDP/tree/Supplements/Example%20files%20for%20version%201.0.0" class="uri">here</a> and place it in your working directory.</p>
+<pre><code># fnddsSRlinks_4.1_flattened is a dataframe generated by:
+
+fnddsSRlinks_4.1_flattened &lt;- FNDDSSRLinks_FNDDSIngred_flattened(FNDDS = &#39;./FNDDS4.mdb&#39;)</code></pre>
+<pre><code># You can also access this data from the preloaded dataset in the R package.
+
+fnddsSRlinks_4.1_flattened &lt;- dietaryindexNDP::EXAMPLE(FILE = &#39;fnddsSRlinks_4.1_flattened&#39;)</code></pre>
+<p>Thus, the function illustrated in this example is:</p>
+<pre><code># For example purposes, the files DR1IFF_E.XPT and DR2IFF_E.XPT only include participants with SEQN 41475, 41476, and 41477, which helps reduce computation time.
+
+garlic.e &lt;- dietaryindexNDP::DII_GARLIC_INTAKE(FLATTENED_FILEPATH = fnddsSRlinks_4.1_flattened, 
+                                               DR1IFF_PATH = &#39;./DR1IFF_E.XPT&#39;, 
+                                               DR2IFF_PATH = &#39;./DR2IFF_E.XPT&#39;)</code></pre>
+<p><strong>Example 2:</strong> <strong>DR1IFF or DR2IFF as an Imported
+DataFrame</strong></p>
+<p>In this second example, suppose
+<strong><code>dr1iff.e</code></strong> and
+<strong><code>dr2iff.e</code></strong> are dataframes that have already
+been imported into the Global Environment from the
+<strong><code>DR1IFF_E.XPT</code></strong> and
+<strong><code>DR2IFF_E.XPT</code></strong> files.</p>
+<pre><code># dr1iff.e and dr2iff.e are dataframes imported from DR1IFF_E.XPT and DR2IFF_E.XPT. For example purposes, dr1iff.e and dr2iff.e only include participants with SEQN 41475, 41476, and 41477, which helps reduce computation time.
+
+install.packages(&#39;haven&#39;)
+
+library(&#39;haven&#39;)
+
+dr1iff.e &lt;- haven::read_xpt(file = &#39;./DR1IFF_E.XPT&#39;)
+
+dr2iff.e &lt;- haven::read_xpt(file = &#39;./DR2IFF_E.XPT&#39;)</code></pre>
+<pre><code># You can also access these two dataframes from the preloaded dataset in the R package.
+
+dr1iff.e &lt;- dietaryindexNDP::EXAMPLE(FILE = &#39;dr1iff.e&#39;)
+
+dr2iff.e &lt;- dietaryindexNDP::EXAMPLE(FILE = &#39;dr2iff.e&#39;)</code></pre>
+<p>Thus, the function illustrated in this example is:</p>
+<pre><code>garlic.e &lt;- dietaryindexNDP::DII_GARLIC_INTAKE(FLATTENED_FILEPATH = fnddsSRlinks_4.1_flattened, 
+                                               DR1IFF_PATH = dr1iff.e, 
+                                               DR2IFF_PATH = dr2iff.e)</code></pre>
+<p><strong>Example 3:</strong> <strong>Calculating the Intake of Garlic
+for Either Day 1 or Day 2</strong></p>
+<p>In this second example, suppose
+<strong><code>dr1iff.e</code></strong> is a dataframe that has already
+been imported into the Global Environment from the
+<strong><code>DR1IFF_E.XPT</code></strong> file. Researchers can
+download the sample data file named
+<strong><code>DR2IFF_E.XPT</code></strong> from <a href="https://github.com/zxucmu/dietaryindexNDP/tree/Supplements/Example%20files%20for%20version%201.0.0" class="uri">here</a> and place it in your working directory.</p>
+<pre><code># Day 1
+
+garlic.e.day1 &lt;- dietaryindexNDP::DII_GARLIC_INTAKE(FLATTENED_FILEPATH = fnddsSRlinks_4.1_flattened, 
+                                                    DR1IFF_PATH = dr1iff.e)
+
+# Day 2
+
+garlic.e.day2 &lt;- dietaryindexNDP::DII_GARLIC_INTAKE(FLATTENED_FILEPATH = fnddsSRlinks_4.1_flattened, 
+                                                    DR2IFF_PATH = &#39;./DR2IFF_E.XPT&#39;)</code></pre>
+<p><strong>Example 4: Calculating the Intake of Garlic for NHANES
+2001-2002</strong></p>
+<p>Since there is only dietary intake data of one day included in NHANES
+2001-2002, the garlic consumption is calculated based solely on the file
+pointed to by <strong><code>DR1IFF_PATH</code></strong> when both
+<strong><code>DR1IFF_PATH</code></strong> and
+<strong><code>DR2IFF_PATH</code></strong> lead to the same file. To
+facilitate understanding, researchers can download the sample data file
+named <strong><code>DRXIFF_B.XPT</code></strong> from <a href="https://github.com/zxucmu/dietaryindexNDP/tree/Supplements/Example%20files%20for%20version%201.0.0" class="uri">here</a> and place it in your working directory.</p>
+<pre><code># The following three examples will yield identical results
+
+fnddsSRlinks_1.0_flattened &lt;- dietaryindexNDP::EXAMPLE(FILE = &#39;fnddsSRlinks_1.0_flattened&#39;)
+
+# For example purposes, the file DRXIFF_B.XPT only include participants with SEQN 1, 2, and 3, which helps reduce computation time.
+
+garlic.a &lt;- dietaryindexNDP::DII_GARLIC_INTAKE(FLATTENED_FILEPATH = fnddsSRlinks_1.0_flattened, 
+                                               DR1IFF_PATH = &#39;./DRXIFF_B.XPT&#39;)
+
+# Suppose drxiff.b is a dataframe that has already been imported into the Global Environment from the file. For example purposes, drxiff.b only include participants with SEQN 1, 2, and 3, which helps reduce computation time.
+
+drxiff.b &lt;- dietaryindexNDP::EXAMPLE(FILE = &#39;drxiff.b&#39;)
+
+garlic.a &lt;- dietaryindexNDP::DII_GARLIC_INTAKE(FLATTENED_FILEPATH = fnddsSRlinks_1.0_flattened, 
+                                               DR2IFF_PATH = drxiff.b)
+
+garlic.a &lt;- dietaryindexNDP::DII_GARLIC_INTAKE(FLATTENED_FILEPATH = fnddsSRlinks_1.0_flattened, 
+                                               DR1IFF_PATH = drxiff.b, 
+                                               DR2IFF_PATH = &#39;./DRXIFF_B.XPT&#39;)</code></pre>
+<p><strong>Value:</strong></p>
+<p>The output is a dataframe that includes the variable
+<strong><code>SEQN</code></strong> (the unique identifier for each
+NHANES participant) and garlic intake variables
+(<strong><code>DR1TGARLIC</code></strong> for Day 1 and/or
+<strong><code>DR2TGARLIC</code></strong> for Day 2). If data from the
+DRXIFF files are used, the output will include the variable
+<strong><code>DRXTGARLIC</code></strong>.</p>
+<p><strong>Important Considerations:</strong></p>
+<p>It should be noted that the calculation of the garlic component
+within the DII applies specifically to the NHANES 2001-2020 period.
+However, NHANES 1999-2000 is <strong>not recommended</strong> due to the
+absence of an FNDDS file for that survey period.</p>
+<p><strong>Calculating the Intake of Ginger, Onion, Pepper, Thyme and
+Oregano：</strong></p>
+<p>Just as the <strong><code>DII_GARLIC_INTAKE()</code></strong>
+function calculates garlic intake, the
+<strong><code>DII_GINGER_INTAKE()</code></strong>,
+<strong><code>DII_ONION_INTAKE()</code></strong>,
+<strong><code>DII_PEPPER_INTAKE()</code></strong>,
+<strong><code>DII_THYME_INTAKE()</code></strong>, and
+<strong><code>DII_OREGANO_INTAKE()</code></strong> functions calculate
+the intake of ginger, onion, pepper, thyme, and oregano,
+respectively.</p>
+<p><strong>2.2</strong> <strong>Calculating the Intakes of Various
+Flavonoids</strong></p>
+<p>The intake of flavonoids within the DII can be calculated for
+participants from NHANES 2007-2010 and 2017-2018 using the
+<strong><code>DII_FLAV_INTAKE()</code></strong> function. This function
+computes the intake of six major flavonoid subgroups: flavan-3-ols,
+flavones, flavonols, flavonones, anthocyanidins, and isoflavones, based
+on the data provided for Day 1 and Day 2 dietary intake files.</p>
+<p>To perform this calculation, the user must provide the file paths for
+the flavonoid intake data files from NHANES, formatted as
+<strong><code>flav_dr1tot_0710.sas7bdat</code></strong> for Day 1 and
+<strong><code>flav_dr2tot_0710.sas7bdat</code></strong> for Day 2.
+Alternatively, these files can be preloaded as dataframes in the Global
+Environment if they have already been imported from corresponding files
+like <strong><code>flav_dr1tot_1718.sas7bdat</code></strong> or
+<strong><code>flav_dr2tot_1718.sas7bdat</code></strong>.</p>
+<p>Here are some examples demonstrating how to calculate flavonoid
+intake using Day 1 or Day 2 files:</p>
+<p><strong>Example 1:</strong> <strong>Provide a Path to a
+flav_dr1tot_0710.sas7bdat or flav_dr2tot_0710.sas7bdat File</strong></p>
+<p>In this example, a file path for a
+<strong><code>flav_dr1tot_0710.sas7bdat</code></strong> or
+<strong><code>flav_dr2tot_0710.sas7bdat</code></strong> file is
+provided. To facilitate understanding, researchers can download the
+sample data file named
+<strong><code>flav_dr1tot_0710.sas7bdat</code></strong> and
+<strong><code>flav_dr2tot_0710.sas7bdat</code></strong> from <a href="https://github.com/zxucmu/dietaryindexNDP/tree/Supplements/Example%20files%20for%20version%201.0.0" class="uri">here</a> and place it in your working directory.</p>
+<p>Thus, the function illustrated in this example is:</p>
+<pre><code># Using both Day 1 and Day 2 intake data for the period 2007-2010.
+
+flav_0710 &lt;- DII_FLAV_INTAKE(FLAV_DR1TOT_PATH = &#39;./flav_dr1tot_0710.sas7bdat&#39;, 
+                             FLAV_DR2TOT_PATH = &#39;./flav_dr2tot_0710.sas7bdat&#39;)</code></pre>
+<p><strong>Example 2:</strong> <strong>Calculate the Intake Using Only
+Day 1 Data</strong></p>
+<p>Alternatively, you can calculate the intake using only Day 1
+data.</p>
+<pre><code># Using only Day 1 data for the period 2007-2010.
+
+flav_0710_day1 &lt;- DII_FLAV_INTAKE(FLAV_DR1TOT_PATH = &#39;./flav_dr1tot_0710.sas7bdat&#39;)</code></pre>
+<p><strong>Example 3:</strong> <strong>Calculate the Intake Using Only
+Day 2 Data</strong></p>
+<p>If the data for Day 2 is already imported as a dataframe, the
+function can be called directly:</p>
+<pre><code># Using Day 2 data already imported into the Global Environment.
+
+flav_dr2tot_0710 &lt;- dietaryindexNDP::EXAMPLE(FILE = &#39;flav_dr2tot_0710&#39;)
+
+flav_0710_day2 &lt;- DII_FLAV_INTAKE(FLAV_DR2TOT_PATH = flav_dr2tot_0710)</code></pre>
+<p><strong>Example 4:</strong> <strong>flav_dr1tot_0710 or
+flav_dr2tot_0710 as an Imported DataFrame</strong></p>
+<p>In this second example, suppose
+<strong><code>flav_dr1tot_0710</code></strong> and
+<strong><code>flav_dr2tot_0710</code></strong> are dataframes that have
+already been imported into the Global Environment from the
+<strong><code>flav_dr1tot_0710.sas7bdat</code></strong> and
+<strong><code>flav_dr2tot_0710.sas7bdat</code></strong>. Researchers can
+also download the sample data file named
+<strong><code>flav_dr1tot_0710.sas7bdat</code></strong> and
+<strong><code>flav_dr2tot_0710.sas7bdat</code></strong> from <a href="https://github.com/zxucmu/dietaryindexNDP/tree/Supplements/Example%20files%20for%20version%201.0.0" class="uri">here</a> and place it in your working directory.</p>
+<pre><code># flav_dr1tot_0710 and flav_dr2tot_0710 are dataframes imported from:
+
+install.packages(&#39;haven&#39;)
+
+library(&#39;haven&#39;)
+
+flav_dr1tot_0710 &lt;- haven::read_sas(data_file = &#39;./flav_dr1tot_0710.sas7bdat&#39;)
+
+flav_dr2tot_0710 &lt;- haven::read_sas(data_file = &#39;./flav_dr2tot_0710.sas7bdat&#39;)</code></pre>
+<pre><code># You can also access these two dataframes from the preloaded dataset in the R package.
+
+flav_dr1tot_0710 &lt;- dietaryindexNDP::EXAMPLE(FILE = &#39;flav_dr1tot_0710&#39;)
+
+flav_dr2tot_0710 &lt;- dietaryindexNDP::EXAMPLE(FILE = &#39;flav_dr2tot_0710&#39;)</code></pre>
+<p>Thus, the function illustrated in this example is:</p>
+<pre><code>flav_0710 &lt;- DII_FLAV_INTAKE(FLAV_DR1TOT_PATH = flav_dr1tot_0710, 
+                             FLAV_DR2TOT_PATH = flav_dr2tot_0710)</code></pre>
+<p>The following one is also acceptable:</p>
+<pre><code>flav_0710 &lt;- DII_FLAV_INTAKE(FLAV_DR1TOT_PATH = &#39;./flav_dr1tot_0710.sas7bdat&#39;, 
+                             FLAV_DR2TOT_PATH = flav_dr2tot_0710)</code></pre>
+<p><strong>Value:</strong></p>
+<p>This function returns a dataframe that includes the participant
+identifier (<strong><code>SEQN</code></strong>) and their flavonoid
+intakes for Day 1, Day 2, or both days, depending on the available data.
+Each flavonoid subgroup will be reported as separate variables, allowing
+researchers to assess specific intake levels for each participant.</p>
+<p><strong>2.3</strong> <strong>Calculating the Intakes of Garlic,
+Ginger, Onion, Pepper, Thyme, Oregano and Various Flavonoids</strong>
+<strong>within the DII in One Step</strong></p>
+<p>The <strong><code>DII_ONESTEP_INTAKE()</code></strong> function
+enables the efficient calculation of several dietary components related
+to the DII in one comprehensive step. This function is designed to
+calculate the intakes of garlic, ginger, onion, pepper, and
+thyme/oregano for NHANES participants from the 2001-2020 period, as well
+as flavonoids (flavan-3-ols, flavones, flavonols, flavanones,
+anthocyanidins, and isoflavones) for the NHANES 2007-2010 and 2017-2018
+cycles.</p>
+<p>To use the <strong><code>DII_ONESTEP_INTAKE()</code></strong>
+function, the following input parameters are required:</p>
+<ul>
+<li><p><strong>FLATTENED_FILEPATH:</strong> A dataframe generated by the
+<strong><code>FNDDSSRLinks_FNDDSIngred_flattened()</code></strong>
+function, which flattens the FNDDSSRLinks/FNDDSIngred file for the
+appropriate FNDDS version.</p></li>
+<li><p><strong>DR1IFF_PATH and DR2IFF_PATH:</strong> These parameters
+represent the file paths for the Individual Foods Files for Day 1 and
+Day 2, respectively. The filenames should follow the format
+<strong><code>DR1IFF_E.XPT</code></strong>,
+<strong><code>DR2IFF_B.XPT</code></strong>, or similar, depending on the
+NHANES cycle. Alternatively, pre-imported dataframes in the Global
+Environment can be used.</p></li>
+<li><p><strong>FLAV_DR1TOT_PATH and FLAV_DR2TOT_PATH:</strong> These are
+the file paths for the Flavonoid Intake Data Files for Day 1 and Day 2.
+The files should be named in formats like
+<strong><code>flav_dr1tot_0710.sas7bdat</code></strong>,
+<strong><code>flav_dr2tot_1718.sas7bdat</code></strong>, or the data can
+be provided as pre-imported dataframes from files like
+<strong><code>flav_dr1tot_0710.sas7bdat</code></strong> or
+<strong><code>flav_dr2tot_1718.sas7bdat</code></strong>.</p></li>
+</ul>
+<p>Here are several examples illustrating the use of the
+<strong><code>DII_ONESTEP_INTAKE()</code></strong> function across
+different NHANES cycles:</p>
+<p><strong>Example 1:</strong> <strong>Using both Day 1 and Day 2 Intake
+Data (NHANES 2007-2010)</strong></p>
+<p>To facilitate understanding of this example, researchers can download
+the sample data file named <strong><code>DR1IFF_E.XPT</code></strong>,
+<strong><code>DR2IFF_E.XPT</code></strong>,
+<strong><code>flav_dr1tot_0708.sas7bdat</code></strong> and
+<strong><code>flav_dr2tot_0708.sas7bdat</code></strong> from <a href="https://github.com/zxucmu/dietaryindexNDP/tree/Supplements/Example%20files%20for%20version%201.0.0">here</a>
+and place it in your working directory.</p>
+<pre><code>fnddsSRlinks_4.1_flattened &lt;- dietaryindexNDP::EXAMPLE(FILE = &#39;fnddsSRlinks_4.1_flattened&#39;)
+
+# add.comp.onestep: additional component onestep
+
+# For example purposes, the files DR1IFF_E.XPT and DR2IFF_E.XPT only include participants with SEQN 41475, 41476, and 41477, which helps reduce computation time.
+
+add.comp.onestep &lt;- DII_ONESTEP_INTAKE(FLATTENED_FILEPATH = fnddsSRlinks_4.1_flattened,
+                                       DR1IFF_PATH = &#39;./DR1IFF_E.XPT&#39;,
+                                       DR2IFF_PATH = &#39;./DR2IFF_E.XPT&#39;,
+                                       FLAV_DR1TOT_PATH = &#39;./flav_dr1tot_0708.sas7bdat&#39;,
+                                       FLAV_DR2TOT_PATH = &#39;./flav_dr2tot_0708.sas7bdat&#39;)</code></pre>
+<p><strong>Example 2:</strong> <strong>Using Only Day 1 Intake Data
+(NHANES 2013-2014)</strong></p>
+<p>To facilitate understanding of this example, researchers can download
+the sample data file named <strong><code>DR1IFF_H.XPT</code></strong>
+from <a href="https://github.com/zxucmu/dietaryindexNDP/tree/Supplements/Example%20files%20for%20version%201.0.0" class="uri">here</a> and place it in your working directory.</p>
+<pre><code>fnddsSRlinks_1314_flattened &lt;- dietaryindexNDP::EXAMPLE(&#39;fnddsSRlinks_1314_flattened&#39;)
+
+# For example purposes, the file DR1IFF_H.XPT only include participants with SEQN 73557, 73558, and 73559, which helps reduce computation time.
+
+add.comp.onestep &lt;- DII_ONESTEP_INTAKE(FLATTENED_FILEPATH = fnddsSRlinks_1314_flattened,
+                                       DR1IFF_PATH = &#39;./DR1IFF_H.XPT&#39;)</code></pre>
+<p><strong>Example 3:</strong> <strong>Using Only Day 2 Intake
+Data</strong> <strong>(NHANES 2015-2016)</strong></p>
+<p>To facilitate understanding of this example, researchers can download
+the sample data file named <strong><code>DR2IFF_I.XPT</code></strong>
+from <a href="https://github.com/zxucmu/dietaryindexNDP/tree/Supplements/Example%20files%20for%20version%201.0.0" class="uri">here</a> and place it in your working directory.</p>
+<pre><code>fnddsIngred_1516_flattened &lt;- dietaryindexNDP::EXAMPLE(&#39;fnddsIngred_1516_flattened&#39;)
+
+# For example purposes, the file DR2IFF_I.XPT only include participants with SEQN 83732, 83733, and 83734, which helps reduce computation time.
+
+add.comp.onestep &lt;- DII_ONESTEP_INTAKE(FLATTENED_FILEPATH = fnddsIngred_1516_flattened,
+                                       DR2IFF_PATH = &#39;./DR2IFF_I.XPT&#39;)</code></pre>
+<p><strong>Example 4: Using Pre-imported Dataframes (NHANES
+2001-2002)</strong></p>
+<pre><code>fnddsSRlinks_1.0_flattened &lt;- dietaryindexNDP::EXAMPLE(&#39;fnddsSRlinks_1.0_flattened&#39;)
+
+# For example purposes, drxiff.b only include participants with SEQN 1, 2, and 3, which helps reduce computation time.
+
+drxiff.b &lt;- dietaryindexNDP::EXAMPLE(&#39;drxiff.b&#39;)
+
+add.comp.onestep &lt;- DII_ONESTEP_INTAKE(FLATTENED_FILEPATH = fnddsSRlinks_1.0_flattened,
+                                       DR1IFF_PATH = drxiff.b)</code></pre>
+<p><strong>Value:</strong></p>
+<p>The function returns a dataframe that includes the
+<strong><code>SEQN</code></strong> (participant identifier) along with
+the calculated intakes for garlic, ginger, onion, pepper, thyme/oregano,
+and flavonoids (isoflavones, anthocyanidins, flavan-3-ols, flavanones,
+flavones, and flavonols) for Day 1, Day 2, or both days. This
+comprehensive dataset allows for a streamlined analysis of these key
+dietary components within the DII.</p>
+<p><strong>Important Considerations:</strong><br />
+The calculation of garlic, ginger, onion, pepper, and thyme/oregano
+intakes is <strong>not recommended</strong> for the NHANES 1999-2000
+cycle due to the absence of the FNDDS (Food and Nutrient Database for
+Dietary Studies) file for that survey period.</p>
+<p>The calculation of garlic, ginger, onion, pepper, thyme, oregano,
+isoflavones, anthocyanidins, flavan-3-ols, flavanones, flavones and
+flavonols intakes within the DII framework is expected to be
+<strong>time-consuming</strong>. To expedite the process, these intakes
+have been pre-calculated. Researchers can access this dietary data
+directly using the
+<strong><code>DII_ONESTEP_INTAKE_RESULT()</code></strong> function, as
+described in detail in Section 2.4.</p>
+<p><strong>2.4</strong> <strong>Retrieving Pre-computed Results for
+Additional Components in DII Calculation</strong></p>
+<p>The <strong><code>DII_ONESTEP_INTAKE_RESULT()</code></strong>
+function provides a seamless way to extract dietary components that have
+already been computed within the DII framework. This function allows
+researchers to quickly access additional dietary components related to
+DII, without the need for recalculating the full intake data. The
+function supports data extraction for both individual and combined days,
+ensuring flexibility based on the research design.</p>
+<p>To efficiently retrieve the desired results, the function requires
+two key input parameters:</p>
+<ul>
+<li><p><strong>NHANESCycle:</strong> This parameter takes a character
+string that specifies the NHANES cycle of interest (e.g., “0102”,
+“0304”). The cycle indicates the specific survey period from which the
+dietary data will be extracted.</p></li>
+<li><p><strong>DAY:</strong> This parameter specifies which day’s
+results to retrieve. It accepts three values:</p>
+<ul>
+<li><p><strong><code>&#39;first&#39;</code></strong> for Day 1 data,</p></li>
+<li><p><strong><code>&#39;second&#39;</code></strong> for Day 2 data,</p></li>
+<li><p><strong><code>&#39;both&#39;</code></strong> for retrieving results from
+both days.</p></li>
+</ul></li>
+</ul>
+<p>Here are some typical use cases demonstrating how the
+<strong><code>DII_ONESTEP_INTAKE_RESULT()</code></strong> function can
+be applied across different NHANES cycles:</p>
+<pre><code># Retrieving pre-computed results for the NHANES 2011-2012 cycle for Day 1:
+
+add.comp.onestep &lt;- DII_ONESTEP_INTAKE_RESULT(NHANESCycle = &quot;1112&quot;, DAY = &quot;first&quot;)</code></pre>
+<pre><code># Retrieving results for both days in the NHANES 2003-2004 cycle:
+
+add.comp.onestep &lt;- DII_ONESTEP_INTAKE_RESULT(NHANESCycle = &quot;0304&quot;, DAY = &quot;both&quot;)</code></pre>
+<pre><code># Extracting results for NHANES 2001-2002:
+
+add.comp.onestep &lt;- DII_ONESTEP_INTAKE_RESULT(NHANESCycle = &quot;0102&quot;, DAY = &quot;second&quot;)</code></pre>
+<p><strong>Value:</strong></p>
+<p>The function returns a dataframe containing the additional DII
+components for the specified NHANES cycle. If the requested NHANES cycle
+is not found, the function will return an error message, prompting the
+researcher to recheck the cycle designation.</p>
+<p>This output can be directly integrated into further statistical
+analysis or used to complement other dietary data for a more
+comprehensive evaluation of participants’ inflammatory dietary
+exposures.</p>
+</div>
+<div id="incorporating-above-additional-components-to-calculate-the-dii" class="section level2">
+<h2><strong>3. Incorporating Above Additional Components to Calculate
+the DII</strong></h2>
+<p>The <strong><code>DII_NHANES_CALCULATION()</code></strong> function
+builds on the established
+<strong><code>DII_NHANES_FPED()</code></strong> function from the
+<strong>dietaryindex</strong> R package. It extends the standard DII
+calculation by incorporating additional dietary components, such as
+garlic, ginger, onion, pepper, and oregano/thyme, along with flavonoids,
+in addition to the components used in the
+<strong><code>DII_NHANES_FPED()</code></strong> for NHANES
+participants.</p>
+<p>This function is highly flexible, allowing researchers to input
+different datasets from multiple NHANES cycles and select specific
+combinations of data for Day 1, Day 2, or both days of dietary
+intake. </p>
+<p>To execute the <strong><code>DII_NHANES_CALCULATION()</code></strong>
+function, the following key parameters are required:</p>
+<ul>
+<li><p><strong>FPED_PATH</strong>: The file path for the total Food
+Patterns Equivalents Intakes per Individual for Day 1. It should be
+formatted like <strong><code>fped_dr1tot_0708.sas7bdat</code></strong>,
+<strong><code>pyr_tot.sas7bdat</code></strong>, etc. Alternatively, it
+can be a dataframe already imported into the R Global Environment from
+such files.</p></li>
+<li><p><strong>NUTRIENT_PATH</strong>: The file path for the total
+Nutrient Intakes file for Day 1 (e.g.,
+<strong><code>DR1TOT_J.XPT</code></strong>). This can also be provided
+as a pre-loaded dataframe.</p></li>
+<li><p><strong>DEMO_PATH</strong>: The file path for the NHANES
+Demographic data file, following standard NHANES naming conventions
+(e.g., <strong><code>DEMO_J.XPT</code></strong>).</p></li>
+<li><p><strong>FPED_PATH2</strong>: The file path for Day 2 Food
+Patterns Equivalents Intakes per Individual, if available. The naming
+format mirrors Day 1 files (e.g.,
+<strong><code>fped_dr2tot_0708.sas7bdat</code></strong>).</p></li>
+<li><p><strong>NUTRIENT_PATH2</strong>: The file path for the total
+Nutrient Intakes for Day 2, similarly formatted to Day 1 (e.g.,
+<strong><code>DR2TOT_J.XPT</code></strong>).</p></li>
+<li><p><strong>OTHER_INGREDIENTS</strong>: A dataframe generated by the
+<strong><code>DII_ONESTEP_INTAKE()</code></strong> function. This
+dataframe includes the SEQN (participant ID) and the intakes of garlic,
+ginger, onion, pepper, oregano, thyme, and various flavonoids for the
+relevant NHANES cycle and day(s) of intake. The inclusion of these
+additional dietary components is what differentiates this function from
+the <strong><code>DII_NHANES_FPED()</code></strong> function in the
+<strong>dietaryindex</strong> R package, allowing a more nuanced
+assessment of the dietary-inflammatory relationship.</p></li>
+</ul>
+<p>Here is an example illustrating the use of the
+<strong><code>DII_NHANES_CALCULATION()</code></strong> function:</p>
+<p>Suppose we aim to calculate the DII for participants in the NHANES
+2007-2008 cycle, using both Day 1 and Day 2 dietary data. To facilitate
+understanding, researchers can download the sample data file named
+<strong><code>fped_dr1tot_0708.sas7bdat</code></strong>,
+<strong><code>fped_dr2tot_0708.sas7bdat</code></strong>,
+<strong><code>DR1TOT_E.XPT</code></strong>,
+<strong><code>DR2TOT_E.XPT</code></strong> and
+<strong><code>DEMO_E.XPT</code></strong> from <a href="https://github.com/zxucmu/dietaryindexNDP/tree/Supplements/Example%20files%20for%20version%201.0.0" class="uri">here</a> and place it in your working directory.</p>
+<pre><code>other_ingredients.e &lt;- dietaryindexNDP::DII_ONESTEP_INTAKE_RESULT(NHANESCycle = &#39;0708&#39;, DAY = &#39;both&#39;)
+
+dii_0708 &lt;- DII_NHANES_CALCULATION(FPED_PATH = &#39;fped_dr1tot_0708.sas7bdat&#39;,
+                                   NUTRIENT_PATH = &#39;DR1TOT_E.XPT&#39;,
+                                   DEMO_PATH = &#39;DEMO_E.XPT&#39;,
+                                   FPED_PATH2 = &#39;fped_dr2tot_0708.sas7bdat&#39;,
+                                   NUTRIENT_PATH2 = &#39;DR2TOT_E.XPT&#39;,
+                                   OTHER_INGREDIENTS = other_ingredients.e)</code></pre>
+<p><strong>Value:</strong></p>
+<p>The output of the
+<strong><code>DII_NHANES_CALCULATION()</code></strong> function is a
+dataframe containing the DII and its component scores. DII is the total
+score, which represents the sum of all components. While DII_NOETOH is
+the DII score excluding alcohol.</p>
+</div>
+<div id="dii_nhanes_plus-integrating-the-above-three-steps-to-calculate-the-dii-in-one-step" class="section level2">
+<h2><strong>4. DII_NHANES_PLUS(): Integrating the Above Three Steps to
+Calculate the DII in One Step</strong></h2>
+<p>The <strong><code>DII_NHANES_PLUS()</code></strong> function provides
+an efficient method and reduces the complexity of the DII calculation by
+combining multiple data processing steps into a single operation, thus
+improving usability and ensuring comprehensive analysis. With a single
+function call, users can integrate dietary data from different sources,
+such as food patterns, nutrient intakes, demographic data and flavonoids
+consumption across two days of intake when applicable.</p>
+<p>Key Parameters:</p>
+<ul>
+<li><p><strong>FPED_PATH</strong> and <strong>FPED_PATH2</strong>: File
+paths or dataframes for the total Food Patterns Equivalents Intakes (Day
+1 and Day 2).</p></li>
+<li><p><strong>NUTRIENT_PATH</strong> and
+<strong>NUTRIENT_PATH2</strong>: File paths or dataframes for total
+Nutrient Intakes (Day 1 and Day 2).</p></li>
+<li><p><strong>DEMO_PATH</strong>: File path or dataframe for
+demographic data.</p></li>
+<li><p><strong>FNDDS_PATH</strong>: File path or dataframe for the FNDDS
+file in Microsoft Access® format.</p></li>
+<li><p><strong>DR1IFF_PATH</strong> and <strong>DR2IFF_PATH</strong>:
+File paths or dataframes for Individual Foods Files (Day 1 and Day
+2).</p></li>
+<li><p><strong>FLAV_DR1TOT_PATH</strong> and
+<strong>FLAV_DR2TOT_PATH</strong>: File paths or dataframes for
+Flavonoid Intake Data Files (Day 1 and Day 2).</p></li>
+</ul>
+<p>Here is an example illustrating the use of the
+<strong><code>DII_NHANES_PLUS()</code></strong> function:</p>
+<p>Suppose we aim to calculate the DII for participants in the NHANES
+2007-2008 cycle, using both Day 1 and Day 2 dietary data. To facilitate
+understanding, researchers can download the sample data file named
+<strong><code>fped_dr1tot_0708.sas7bdat</code></strong>,
+<strong><code>fped_dr2tot_0708.sas7bdat</code></strong>,
+<strong><code>DR1TOT_E.XPT</code></strong>,
+<strong><code>DR2TOT_E.XPT</code></strong>,
+<strong><code>DR1IFF_E.XPT</code></strong>,
+<strong><code>DEMO_E.XPT</code></strong>,
+<strong><code>FNDDS4.mdb</code></strong>,
+<strong><code>DR2IFF_E.XPT</code></strong>,
+<strong><code>flav_dr1tot_0708.sas7bdat</code></strong>, and
+<strong><code>flav_dr2tot_0708.sas7bdat</code></strong> from <a href="https://github.com/zxucmu/dietaryindexNDP/tree/Supplements/Example%20files%20for%20version%201.0.0" class="uri">here</a> and place it in your working directory.</p>
+<pre><code># For example purposes, the files DR1IFF_E.XPT and DR2IFF_E.XPT only include participants with SEQN 41475, 41476, and 41477, which helps reduce computation time.
+
+dii_0708 &lt;- DII_NHANES_PLUS(FPED_PATH = &#39;./fped_dr1tot_0708.sas7bdat&#39;,
+                            NUTRIENT_PATH = &#39;./DR1TOT_E.XPT&#39;,
+                            DEMO_PATH = &#39;./DEMO_E.XPT&#39;,
+                            FPED_PATH2 = &#39;./fped_dr2tot_0708.sas7bdat&#39;,
+                            NUTRIENT_PATH2 = &#39;./DR2TOT_E.XPT&#39;,
+                            FNDDS_PATH = &#39;./FNDDS4.mdb&#39;,
+                            DR1IFF_PATH = &#39;./DR1IFF_E.XPT&#39;,
+                            DR2IFF_PATH = &#39;./DR2IFF_E.XPT&#39;,
+                            FLAV_DR1TOT_PATH = &#39;./flav_dr1tot_0708.sas7bdat&#39;,
+                            FLAV_DR2TOT_PATH = &#39;./flav_dr2tot_0708.sas7bdat&#39;)</code></pre>
+<p><strong>Value:</strong></p>
+<p>The function returns a dataframe containing the DII and its component
+scores.</p>
+</div>
+<div id="dii_nhanes_plus_result-retrieving-precomputed-dii-results" class="section level2">
+<h2><strong>5. DII_NHANES_PLUS_RESULT(): Retrieving Precomputed DII
+Results</strong></h2>
+<p>The <strong><code>DII_NHANES_PLUS_RESULT()</code></strong> function
+offers a streamlined and efficient approach for researchers looking to
+access precomputed Dietary Inflammatory Index (DII) values for specific
+NHANES cycles. This function is particularly useful when recalculating
+DII values is unnecessary or when computational resources need to be
+optimized. By simply specifying the desired NHANES cycle and day of
+dietary intake, researchers can instantly retrieve the DII results,
+including its components, without the need to rerun calculations.</p>
+<p>Key Parameters:</p>
+<ul>
+<li><p><strong>NHANESCycle</strong>: This parameter requires a character
+string indicating the NHANES cycle of interest. Accepted formats include
+cycles like “0102” for 2001-2002, “0708” for 2007-2008, and so
+on.</p></li>
+<li><p><strong>DAY</strong>: Specifies which day’s DII result to
+retrieve. Options include <strong><code>&#39;first&#39;</code></strong> for Day
+1, <strong><code>&#39;second&#39;</code></strong> for Day 2, or
+<strong><code>&#39;both&#39;</code></strong> for combined results from both
+days.</p></li>
+</ul>
+<p>Here are several examples illustrating the use of the
+<strong><code>DII_NHANES_PLUS_RESULT()</code></strong> function across
+different NHANES cycles:</p>
+<pre><code># Retrieve DII values for NHANES 2009-2010 on Day 1
+dii_day1_0910 &lt;- DII_NHANES_PLUS_RESULT(NHANESCycle = &quot;2009-2010&quot;, DAY = c(&#39;first&#39;))
+
+# Retrieve DII values for NHANES 2011-2012 on Day 2
+dii_day2_1112 &lt;- DII_NHANES_PLUS_RESULT(NHANESCycle = &quot;2011-2012&quot;, DAY = c(&#39;second&#39;))
+
+# Retrieve DII values for NHANES 2007-2008 for both Day 1 and Day 2
+dii_both_0708 &lt;- DII_NHANES_PLUS_RESULT(NHANESCycle = &quot;2007-2008&quot;, DAY = c(&#39;both&#39;))</code></pre>
+<p><strong>Value:</strong></p>
+<p>The function returns a dataframe that includes the DII and its
+component values for the specified NHANES cycle.</p>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
