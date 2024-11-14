@@ -1,20 +1,3 @@
----
-title: "DietaryindexNDP: User Guide"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{DietaryindexNDP: User Guide}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
-bibliography: references.bib
----
-
-```{r message=FALSE, warning=FALSE, include=FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
-
 # Introduction
 
 The R package 'dietaryindexNDP' (dietaryindex NHANES DII PLUS) provides a comprehensive set of tools to calculate the Dietary Inflammation Index (DII) using data from the National Health and Nutrition Examination Survey (NHANES). This vignette will guide you through the functionality of the package, demonstrating how to utilize its various functions for dietary analysis and inflammation index calculation.
