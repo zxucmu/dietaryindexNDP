@@ -8,7 +8,7 @@ Please cite the following two publications when using this R package in your res
 
 1\. J.J. Zhan, R.A. Hodge, A.L. Dunlop, M.M. Lee, L. Bui, D. Liang, E.P. Ferranti, Dietaryindex: A User-Friendly and Versatile R Package for Standardizing Dietary Pattern Analysis in Epidemiological and Clinical Studies, The American Journal of Clinical Nutrition, <https://doi.org/10.1016/j.ajcnut.2024.08.021>.
 
-2\. Improving the dietaryindex R Package: A Proposal to Include Additional Components for More Accurate DII Computation in NHANES, The American Journal of Clinical Nutrition. (Under review)
+2\. Z. Xu, Improving the dietaryindex R Package: A Proposal to Include Additional Components for More Accurate DII Computation in NHANES, The American Journal of Clinical Nutrition, <https://doi.org/10.1016/j.ajcnut.2024.10.023>.
 
 # **Before You Get Started**
 
