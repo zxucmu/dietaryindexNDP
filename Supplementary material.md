@@ -4,25 +4,7 @@
 
 **Zhe Xu**
 
-**Supplementary Methods**
 
-**Supplementary Results**
-
-**Supplementary Discussion**
-
-**Supplementary Table 1.** Detailed categorization criteria for covariates
-
-**Supplementary Table 2.** R Packages Utilized for Statistical Analyses
-
-**Supplementary Table 3.** Baseline characteristics of included versus excluded participants
-
-**Supplementary Figure 1.** Flowchart of the study
-
-**Supplementary Figure 2.** Comparative analysis of three DII indices: correlations, distribution shifts, and inflammatory biomarker associations
-
-**Supplementary Figure 3.** Comparison of chronic disease risk associations across three DII indices
-
-**Supplementary References**
 
 **1.Supplementary Methods**
 
