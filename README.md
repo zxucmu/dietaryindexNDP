@@ -61,7 +61,7 @@ The restricted availability of flavonoid data (2007--2010/2017--2018 cycles) con
 ### **Supplementary Table 1. Detailed categorization criteria for covariates**
 
 | **Covariates**  | **Categorization criteria**                                                                                                                                         |
-|--------------------------|----------------------------------------------|
+|:--------------------------|:----------------------------------------------|
 | Age             | \<60 years; 60-79 years; ≥80 years                                                                                                                                  |
 | Race/ethnicity  | Mexican American; Other Hispanic; Non-Hispanic White; Non-Hispanic Black; Other Race/multiracial                                                                    |
 | Education level | Less than high School; High School Grad/GED or equivalent; More than high School                                                                                    |
@@ -77,7 +77,7 @@ Abbreviations: PIR = the poverty-income ratio; LTPA = leisure-time physical acti
 ### **Supplementary Table 2. R Packages Utilized for Statistical Analyses**
 
 | **Package** | **Version** |
-|-------------|-------------|
+|:-------------|:-------------|
 | tidyverse   | 2.0.0       |
 | arrow       | 20.0.0      |
 | labelled    | 2.12.0      |
@@ -91,50 +91,83 @@ Abbreviations: PIR = the poverty-income ratio; LTPA = leisure-time physical acti
 | sandwich    | 3.1-1       |
 | lmtest      | 0.9-40      |
 
-### **Supplementary Table 3. Baseline characteristics of included versus excluded participants**
+### **Supplementary Table 3. Baseline characteristics of included versus excluded participants**<sup>1</sup>
 
-| Col1 | Col2 | Col3 | Col4 | Col5 | Col6 | Col7 |
-|------|------|------|------|------|------|------|
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
+| Covariates                         | Included participants (n = 55,553) | Excluded participants (n = 19,705) | *P*-value | Included participants (n = 14,179) | Excluded participants (n = 4,252) | *P*-value |
+|:----------------|:--------------------|:--------------------|:----------------|:--------------------|:--------------------|:----------------|
+| **Age (yrs)**                      |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;< 60                              | 36,297 (65%)                       | 12,948 (66%)                       |                   | 9,130 (64%)                        | 2,924 (69%)                       |                   |
+| &nbsp;&nbsp;60-79                              | 15,741 (28%)                       | 4,808 (24%)                        |                   | 4,129 (29%)                        | 957 (23%)                         |                   |
+| &nbsp;&nbsp;≥ 80                               | 3,515 (6.3%)                       | 1,949 (9.9%)                       |                   | 920 (6.5%)                         | 371 (8.7%)                        |                   |
+| **Gender**                         |                                    |                                    | 0.021             |                                    |                                   | 0.863             |
+| &nbsp;&nbsp;Male                               | 27,396 (49%)                       | 9,528 (48%)                        |                   | 6,993 (49%)                        | 2,090 (49%)                       |                   |
+| &nbsp;&nbsp;Female                             | 28,157 (51%)                       | 10,177 (52%)                       |                   | 7,186 (51%)                        | 2,162 (51%)                       |                   |
+| **Race**                           |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Non-Hispanic White                 | 25,429 (46%)                       | 7,333 (37%)                        |                   | 6,535 (46%)                        | 1,387 (33%)                       |                   |
+| &nbsp;&nbsp;Non-Hispanic Black                 | 11,678 (21%)                       | 4,257 (22%)                        |                   | 2,882 (20%)                        | 915 (22%)                         |                   |
+| &nbsp;&nbsp;Mexican American                   | 8,787 (16%)                        | 3,300 (17%)                        |                   | 2,220 (16%)                        | 844 (20%)                         |                   |
+| &nbsp;&nbsp;Other Hispanic                     | 4,436 (8.0%)                       | 2,052 (10%)                        |                   | 1,339 (9.4%)                       | 558 (13%)                         |                   |
+| &nbsp;&nbsp;Other Race/multiracial             | 5,223 (9.4%)                       | 2,763 (14%)                        |                   | 1,203 (8.5%)                       | 548 (13%)                         |                   |
+| **Education level**                |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Less Than high school              | 13,465 (24%)                       | 5,720 (31%)                        |                   | 3,618 (26%)                        | 1,400 (33%)                       |                   |
+| &nbsp;&nbsp;High School Grad/GED or Equivalent | 13,038 (23%)                       | 4,703 (25%)                        |                   | 3,394 (24%)                        | 1,114 (26%)                       |                   |
+| &nbsp;&nbsp;More than high school              | 29,050 (52%)                       | 8,314 (44%)                        |                   | 7,167 (51%)                        | 1,702 (40%)                       |                   |
+| **Marital status**                 |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Married or living with partner     | 32,070 (58%)                       | 8,710 (53%)                        |                   | 8,452 (60%)                        | 1,851 (55%)                       |                   |
+| &nbsp;&nbsp;Widowed, divorced, or separated    | 12,355 (22%)                       | 4,203 (25%)                        |                   | 3,317 (23%)                        | 848 (25%)                         |                   |
+| &nbsp;&nbsp;Never married                      | 11,128 (20%)                       | 3,578 (22%)                        |                   | 2,410 (17%)                        | 651 (19%)                         |                   |
+| **PIR**                            |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;< 1.3                             | 16,680 (30%)                       | 3,965 (35%)                        |                   | 4,357 (31%)                        | 838 (38%)                         |                   |
+| &nbsp;&nbsp;1.3 - 3.5                          | 21,214 (38%)                       | 4,177 (37%)                        |                   | 5,554 (39%)                        | 846 (39%)                         |                   |
+| &nbsp;&nbsp;≥ 3.5                              | 17,659 (32%)                       | 3,090 (28%)                        |                   | 4,268 (30%)                        | 509 (23%)                         |                   |
+| **Alcohol use**                    |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;None smokers                       | 5,138 (9.2%)                       | 1,323 (6.7%)                       |                   | 1,243 (8.8%)                       | 200 (4.7%)                        |                   |
+| &nbsp;&nbsp;Former smokers                     | 6,926 (12%)                        | 1,094 (5.6%)                       |                   | 1,757 (12%)                        | 212 (5.0%)                        |                   |
+| &nbsp;&nbsp;Current smokers                    | 17,433 (31%)                       | 2,254 (11%)                        |                   | 4,516 (32%)                        | 421 (9.9%)                        |                   |
+| &nbsp;&nbsp;Missing                            | 26,056 (47%)                       | 15,034 (76%)                       |                   | 6,663 (47%)                        | 3,419 (80%)                       |                   |
+| **Smoking status**                 |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Current smokers                    | 10,912 (20%)                       | 3,316 (17%)                        |                   | 2,972 (21%)                        | 693 (16%)                         |                   |
+| &nbsp;&nbsp;Former smokers                     | 13,654 (25%)                       | 3,896 (20%)                        |                   | 3,585 (25%)                        | 730 (17%)                         |                   |
+| &nbsp;&nbsp;Non-smokers                        | 29,163 (52%)                       | 11,113 (56%)                       |                   | 7,620 (54%)                        | 2,222 (52%)                       |                   |
+| &nbsp;&nbsp;Missing                            | 1,824 (3.3%)                       | 1,380 (7.0%)                       |                   | 2 (\<0.1%)                         | 607 (14%)                         |                   |
+| **LTPA**                           |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Inactive                           | 17,943 (32%)                       | 6,138 (31%)                        |                   | 7,731 (55%)                        | 2,384 (56%)                       |                   |
+| &nbsp;&nbsp;Insufficiently active              | 10,490 (19%)                       | 2,664 (14%)                        |                   | 2,029 (14%)                        | 507 (12%)                         |                   |
+| &nbsp;&nbsp;Sufficiently active                | 6,788 (12%)                        | 1,981 (10%)                        |                   | 1,740 (12%)                        | 408 (9.6%)                        |                   |
+| &nbsp;&nbsp;Highly active                      | 10,587 (19%)                       | 4,346 (22%)                        |                   | 2,662 (19%)                        | 942 (22%)                         |                   |
+| &nbsp;&nbsp;Missing                            | 9,745 (18%)                        | 4,576 (23%)                        |                   | 17 (0.1%)                          | 11 (0.3%)                         |                   |
+| **BMI**                            |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Normal range                       | 15,327 (28%)                       | 4,494 (23%)                        |                   | 3,645 (26%)                        | 1,099 (26%)                       |                   |
+| &nbsp;&nbsp;Obesity                            | 20,544 (37%)                       | 4,509 (23%)                        |                   | 5,488(39%)                         | 1,111 (26%)                       |                   |
+| &nbsp;&nbsp;Overweight                         | 17,990 (32%)                       | 4,393 (22%)                        |                   | 4,663 (33%)                        | 1,102 (26%)                       |                   |
+| &nbsp;&nbsp;Underweight                        | 887 (1.6%)                         | 400 (2.0%)                         |                   | 222 (1.6%)                         | 94 (2.2%)                         |                   |
+| &nbsp;&nbsp;Missing                            | 805 (1.4%)                         | 5,909 (30%)                        |                   | 161 (1.1%)                         | 846 (20%)                         |                   |
+| **Hypertension**                   |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Yes                                | 28,005 (50%)                       | 7,763 (39%)                        |                   | 7,825 (55%)                        | 1,768 (42%)                       |                   |
+| **Diabetes**                       |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Yes                                | 9,620 (17%)                        | 2,926 (15%)                        |                   | 2,744 (19%)                        | 659 (15%)                         |                   |
+| **Cancer**                         |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Yes                                | 5,556 (10%)                        | 1,758 (8.9%)                       |                   | 1,475 (10%)                        | 306 (7.2%)                        |                   |
+| **CHF**                            |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Yes                                | 1,865 (3.4%)                       | 743 (3.8%)                         |                   | 463 (3.3%)                         | 128 (3.0%)                        |                   |
+| **CHD**                            |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Yes                                | 2,386 (4.3%)                       | 788 (4.0%)                         |                   | 619 (4.4%)                         | 153 (3.6%)                        |                   |
+| **Angina**                         |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Yes                                | 1,555 (2.8%)                       | 487 (2.5%)                         |                   | 377 (2.7%)                         | 102 (2.4%)                        |                   |
+| **Heart attack**                   |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Yes                                | 2,410 (4.3%)                       | 817 (4.1%)                         |                   | 651 (4.6%)                         | 161 (3.8%)                        |                   |
+| **Stroke**                         |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Yes                                | 2,226 (4.0%)                       | 823 (4.2%)                         |                   | 609 (4.3%)                         | 149 (3.5%)                        |                   |
+| **Asthma**                         |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Yes                                | 7,910 (14%)                        | 2,843 (14%)                        |                   | 1,996 (14%)                        | 598 (14%)                         |                   |
+| **Emphysema**                      |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Yes                                | 913 (1.6%)                         | 220 (1.1%)                         |                   | 331 (2.3%)                         | 76 (1.8%)                         |                   |
+| **Chronic bronchitis**             |                                    |                                    | \<0.001           |                                    |                                   | \<0.001           |
+| &nbsp;&nbsp;Yes                                | 2,576 (4.6%)                       | 579 (2.9%)                         |                   | 879 (6.2%)                         | 197 (4.6%)                        |                   |
+
+Abbreviation: NHANES = the US National Health and Nutrition Examination Survey; PIR = the poverty-income ratio; LTPA = leisure-time physical activity; BMI = body mass index; CHF = chronic heart failure; CHD = coronary heart disease.
+<sup>1</sup> Aged 18 years and older and not pregnant
+Categorical variables were expressed as number (percentage). P values were calculated using analysis of Pearson's Chi-squared test for categorical variables.
 
 ### **Supplementary Figure 1. Flowchart of the study**
 
