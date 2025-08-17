@@ -149,5 +149,4 @@ Abbreviations: DII = dietary inflammatory index; Sp-Flav- = Base DII (28 compone
 ### **Supplementary Figure 3. Comparison of chronic disease risk associations across three DII indices**
 
 ![Abbreviations: DII = dietary inflammatory index; Sp-Flav- = Base DII (28 components); Sp-Flav+ = Spice-enhanced DII (33 components); Sp+Flav+ = Spice and Flavonoid-enhanced DII (39 components); CVD = cardiovascular disease; ECA = selected chronic respiratory conditions (emphysema, chronic bronchitis, or asthma).](Figure%203.jpg)
-
 Abbreviations: DII = dietary inflammatory index; Sp-Flav- = Base DII (28 components); Sp-Flav+ = Spice-enhanced DII (33 components); Sp+Flav+ = Spice and Flavonoid-enhanced DII (39 components); CVD = cardiovascular disease; ECA = selected chronic respiratory conditions (emphysema, chronic bronchitis, or asthma
