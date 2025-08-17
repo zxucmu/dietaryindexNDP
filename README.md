@@ -72,7 +72,7 @@ The restricted availability of flavonoid data (2007--2010/2017--2018 cycles) con
 | LTPA            | Inactive: 0 min/week; Insufficiently active: \<150 min/week; Sufficiently active: 150-300 min/week; Highly active: \>300 min/week                                   |
 | BMI             | Normal range: \<18.5 kg/m²; Underweight: ≥18.5 and \<25.0 kg/m²; Overweight: ≥25.0 and \<30 kg/m²; Obesity: ≥30 kg/m²                                               |
 
-: Abbreviations: PIR = the poverty-income ratio; LTPA = leisure-time physical activity; BMI = body mass index.
+Abbreviations: PIR = the poverty-income ratio; LTPA = leisure-time physical activity; BMI = body mass index.
 
 ### **Supplementary Table 2. R Packages Utilized for Statistical Analyses**
 
@@ -139,11 +139,15 @@ The restricted availability of flavonoid data (2007--2010/2017--2018 cycles) con
 ### **Supplementary Figure 1. Flowchart of the study**
 
 ![Abbreviations: DII = dietary inflammatory index; Sp-Flav- = Base DII (28 components); Sp-Flav+ = Spice-enhanced DII (33 components); Sp+Flav+ = Spice and Flavonoid-enhanced DII (39 components).](Figure%201.jpg)
+Abbreviations: DII = dietary inflammatory index; Sp-Flav- = Base DII (28 components); Sp-Flav+ = Spice-enhanced DII (33 components); Sp+Flav+ = Spice and Flavonoid-enhanced DII (39 components).
 
 ### **Supplementary Figure 2. Comparative analysis of three DII indices: correlations, distribution shifts, and inflammatory biomarker associations**
 
 ![Abbreviations: DII = dietary inflammatory index; Sp-Flav- = Base DII (28 components); Sp-Flav+ = Spice-enhanced DII (33 components); Sp+Flav+ = Spice and Flavonoid-enhanced DII (39 components); CRP = C-reactive protein. A. Pairwise correlations: the Sp-Flav- DII vs. the Sp+Flav- DII and the Sp-Flav- DII vs. the Sp+Flav+ DII; B. Distribution differences: the Sp-Flav- DII vs. the Sp+Flav- DII and the Sp-Flav- DII vs. the Sp+Flav+ DII; C. Transition analyses between the Sp-Flav- DII vs. the Sp+Flav- DII and the Sp-Flav- DII vs. the Sp+Flav+ DII; D. Altered distributions: Sp-Flav- DII vs. Sp+Flav- DII and Sp-Flav- DII vs. Sp+Flav+ DII; E. Modified associations of the Sp+Flav- DII and the Sp+Flav+ DII with CRP levels compared to the Sp-Flav- DII.](Figure%202.jpg)
+Abbreviations: DII = dietary inflammatory index; Sp-Flav- = Base DII (28 components); Sp-Flav+ = Spice-enhanced DII (33 components); Sp+Flav+ = Spice and Flavonoid-enhanced DII (39 components); CRP = C-reactive protein. A. Pairwise correlations: the Sp-Flav- DII vs. the Sp+Flav- DII and the Sp-Flav- DII vs. the Sp+Flav+ DII; B. Distribution differences: the Sp-Flav- DII vs. the Sp+Flav- DII and the Sp-Flav- DII vs. the Sp+Flav+ DII; C. Transition analyses between the Sp-Flav- DII vs. the Sp+Flav- DII and the Sp-Flav- DII vs. the Sp+Flav+ DII; D. Altered distributions: Sp-Flav- DII vs. Sp+Flav- DII and Sp-Flav- DII vs. Sp+Flav+ DII; E. Modified associations of the Sp+Flav- DII and the Sp+Flav+ DII with CRP levels compared to the Sp-Flav- DII.
 
 ### **Supplementary Figure 3. Comparison of chronic disease risk associations across three DII indices**
 
 ![Abbreviations: DII = dietary inflammatory index; Sp-Flav- = Base DII (28 components); Sp-Flav+ = Spice-enhanced DII (33 components); Sp+Flav+ = Spice and Flavonoid-enhanced DII (39 components); CVD = cardiovascular disease; ECA = selected chronic respiratory conditions (emphysema, chronic bronchitis, or asthma).](Figure%203.jpg)
+
+Abbreviations: DII = dietary inflammatory index; Sp-Flav- = Base DII (28 components); Sp-Flav+ = Spice-enhanced DII (33 components); Sp+Flav+ = Spice and Flavonoid-enhanced DII (39 components); CVD = cardiovascular disease; ECA = selected chronic respiratory conditions (emphysema, chronic bronchitis, or asthma
