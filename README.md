@@ -1,6 +1,6 @@
 # <span style="font-family: 'Arial'; font-size: 30pt;">Supplementary Material</span> 
 
-### **Improving the dietaryindex R package: A proposal to include additional components for more accurate DII computation in NHANES.**
+### **Improving the dietaryindex R package: A proposal to include additional components for more accurate DII computation in NHANES. PMID: 39528051, DOI: 10.1016/j.ajcnut.2024.10.023**
 
 #### **Zhe Xu. Department of Thoracic Surgery, The First Hospital of China Medical University, Shenyang, Liaoning 110001, PR China. E-mail address: zxu@cmu.edu.cn**  
 
