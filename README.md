@@ -166,7 +166,7 @@ Abbreviations: PIR = the poverty-income ratio; LTPA = leisure-time physical acti
 | &nbsp;&nbsp;Yes                                | 2,576 (4.6%)                       | 579 (2.9%)                         |                   | 879 (6.2%)                         | 197 (4.6%)                        |                   |
 
 Abbreviation: NHANES = the US National Health and Nutrition Examination Survey; PIR = the poverty-income ratio; LTPA = leisure-time physical activity; BMI = body mass index; CHF = chronic heart failure; CHD = coronary heart disease.
-<sup>1</sup> Aged 18 years and older and not pregnant
+<sup>1</sup>Aged 18 years and older and not pregnant
 Categorical variables were expressed as number (percentage). P values were calculated using analysis of Pearson's Chi-squared test for categorical variables.
 
 ### **Supplementary Figure 1. Flowchart of the study**
